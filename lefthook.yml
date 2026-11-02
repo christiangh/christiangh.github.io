@@ -1,10 +1,14 @@
 pre-commit:
-  commands:
-    prettier:
+  piped: true
+  jobs:
+    - name: prettier
       run: pnpm prettier --write --ignore-unknown {staged_files}
       stage_fixed: true
+    - name: eslint
+      glob: '*.{js,mjs,ts,astro}'
+      run: pnpm eslint {staged_files}
 
 commit-msg:
-  commands:
-    commitlint:
+  jobs:
+    - name: commitlint
       run: pnpm commitlint --edit {1}
