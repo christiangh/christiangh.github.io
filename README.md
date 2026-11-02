@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+# christiangh.github.io
+
+Personal portfolio of Christian García Herreras, senior frontend developer.
+
+**Live:** https://christiangh.github.io
+
+## Stack
+
+- [Astro](https://astro.build) (static output)
+- TypeScript (strict)
+- Deployed to GitHub Pages via GitHub Actions
+
+## Requirements
+
+- Node.js 26 (see [`.nvmrc`](./.nvmrc))
+- pnpm 12 (pinned in `package.json` → `packageManager`)
+
+## Getting started
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The dev server runs at http://localhost:4321.
 
-## 🚀 Project Structure
+## Scripts
 
-Inside of your Astro project, you'll see the following folders and files:
+| Command             | Action                                    |
+| :------------------ | :---------------------------------------- |
+| `pnpm dev`          | Start the dev server                      |
+| `pnpm build`        | Build the production site to `./dist/`    |
+| `pnpm preview`      | Preview the production build locally      |
+| `pnpm check`        | Type-check the project with `astro check` |
+| `pnpm lint`         | Lint with ESLint                          |
+| `pnpm format`       | Format with Prettier                      |
+| `pnpm format:check` | Check formatting without writing          |
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Conventions
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Commits:** [Conventional Commits 1.0](https://www.conventionalcommits.org/en/v1.0.0/), enforced by commitlint.
+- **Git hooks** (lefthook): pre-commit formats and lints staged files, commit-msg validates the message and pre-push type-checks the project.
+- **Formatting:** EditorConfig + Prettier (tabs, LF line endings).
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Deployment
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Every push to `main` runs format, lint, type-check and build in CI and deploys
+to GitHub Pages. Pull requests run the same checks without deploying.
