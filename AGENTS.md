@@ -1,3 +1,23 @@
+# AGENTS.md
+
+Personal portfolio built with Astro, deployed to GitHub Pages as a static site.
+
+## Commands
+
+- Install: `pnpm install` (pnpm only, never npm or yarn)
+- After editing `.ts` or `.astro` files, run `pnpm check` to catch type errors.
+- Formatting and linting run in pre-commit hooks; do not run them manually.
+- Do not commit or push: the user reviews and commits every change.
+
+## Conventions
+
+- Code, comments, commits and branch names in English. Site content in Spanish.
+- Indentation: tabs (size 4); YAML uses 2 spaces. Follow `.editorconfig`.
+- Commits follow Conventional Commits 1.0, short format (`type: description`).
+- Static output only: no SSR adapters, no server endpoints.
+- Do not add dependencies without asking first.
+- Keep this file and `README.md` in sync when conventions or structure change.
+
 ## Development
 
 When starting the dev server, use background mode:
@@ -16,7 +36,6 @@ Consult these guides before working on related tasks:
 
 - [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
 - [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
+- [Adding styles](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
