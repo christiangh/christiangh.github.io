@@ -1,0 +1,10 @@
+pre-commit:
+  commands:
+    prettier:
+      run: pnpm prettier --write --ignore-unknown {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit {1}
