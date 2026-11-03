@@ -12,6 +12,7 @@ Personal portfolio built with Astro, deployed to GitHub Pages as a static site.
 ## Conventions
 
 - Code, comments, commits and branch names in English. Site content in Spanish.
+- Comment only what the code cannot say: non-obvious decisions, workarounds or unusual practices. No comments that restate the code.
 - Indentation: tabs (size 4); YAML uses 2 spaces. Follow `.editorconfig`.
 - Commits follow Conventional Commits 1.0, short format (`type: description`).
 - Static output only: no SSR adapters, no server endpoints.
