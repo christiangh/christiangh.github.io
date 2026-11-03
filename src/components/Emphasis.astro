@@ -1,0 +1,14 @@
+---
+import { parseEmphasis } from '../lib/emphasis';
+
+interface Props {
+	text: string;
+	class?: string;
+}
+
+const { text, class: className } = Astro.props;
+---
+
+{parseEmphasis(text).map((part) =>
+	part.emphasis ? <em class={className}>{part.text}</em> : part.text,
+)}

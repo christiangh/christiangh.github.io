@@ -3,19 +3,21 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { getLang, useTranslations } from '../i18n/utils';
 import { stripEmphasis } from '../lib/emphasis';
 import { sections } from '../lib/sections';
+import Logo from './Logo.astro';
+import MobileMenu from './MobileMenu.astro';
 
 const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 const home = getRelativeLocaleUrl(lang);
 ---
 
-<header class="fixed inset-x-0 top-0 z-50 bg-ink/86 font-mono text-xs text-cream backdrop-blur-md">
+<header class="fixed inset-x-0 top-0 z-50 bg-ink/92 font-mono text-xs text-cream backdrop-blur-md md:bg-ink/86">
 	<nav
 		aria-label={t('nav.label')}
-		class="flex items-center justify-between gap-4 px-gutter py-3.5"
+		class="flex h-14 items-center justify-between gap-4 px-gutter md:h-auto md:py-3.5"
 	>
 		<a href={`${home}#top`} class="font-bold tracking-wide">
-			<span class="text-vanilla">~/</span>christiangh
+			<Logo />
 		</a>
 
 		<ol class="hidden gap-6 md:flex lg:gap-8">
@@ -28,5 +30,7 @@ const home = getRelativeLocaleUrl(lang);
 				</li>
 			))}
 		</ol>
+
+		<MobileMenu />
 	</nav>
 </header>

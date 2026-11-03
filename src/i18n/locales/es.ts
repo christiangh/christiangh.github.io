@@ -4,6 +4,8 @@ export const es = {
 		'Desarrollador frontend senior especializado en Angular. Diseño arquitecturas frontend escalables y trabajo con Astro e IA aplicada al desarrollo.',
 
 	'nav.label': 'Principal',
+	'nav.menu': 'menú',
+	'nav.close': 'cerrar',
 
 	// `*text*` marks the emphasized part, rendered in italics.
 	'section.about.title': 'Sobre *mí*',

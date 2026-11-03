@@ -1,0 +1,102 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLang, useTranslations } from '../i18n/utils';
+import { contact } from '../lib/contact';
+import { sections } from '../lib/sections';
+import Emphasis from './Emphasis.astro';
+import Logo from './Logo.astro';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const home = getRelativeLocaleUrl(lang);
+---
+
+<button
+	type="button"
+	aria-haspopup="dialog"
+	data-menu-open
+	class="flex h-11 items-center gap-2.5 px-1 text-caramel md:hidden"
+>
+	{t('nav.menu')}
+	<span aria-hidden="true" class="flex w-5.5 flex-col items-end gap-1.25">
+		<span class="h-0.5 w-full bg-vanilla"></span>
+		<span class="h-0.5 w-3.5 bg-vanilla"></span>
+	</span>
+</button>
+
+<dialog
+	id="mobile-menu"
+	aria-label={t('nav.menu')}
+	class="m-0 h-dvh max-h-none w-full max-w-none bg-ink p-0 text-cream open:flex open:flex-col"
+>
+	<div class="flex h-14 shrink-0 items-center justify-between px-gutter font-mono text-xs">
+		<span aria-hidden="true" class="font-bold tracking-wide">
+			<Logo />
+		</span>
+		<button type="button" data-menu-close class="flex h-11 items-center gap-2.5 text-caramel">
+			{t('nav.close')}
+			<span aria-hidden="true" class="text-xl text-vanilla">
+				×
+			</span>
+		</button>
+	</div>
+
+	<nav aria-label={t('nav.label')} class="border-t border-bark px-gutter pt-6">
+		<ol>
+			{sections.map((id, index) => (
+				<li>
+					<a
+						href={`${home}#${id}`}
+						class="flex items-baseline gap-4 border-b border-bark py-3.5"
+					>
+						<span aria-hidden="true" class="w-5 font-mono text-2xs text-caramel">
+							{String(index + 1).padStart(2, '0')}
+						</span>
+						<span class="font-display text-menu">
+							<Emphasis text={t(`section.${id}.title`)} class="text-vanilla" />
+						</span>
+					</a>
+				</li>
+			))}
+		</ol>
+	</nav>
+
+	<div class="mt-auto flex flex-col gap-1.5 px-gutter pt-6 pb-7 font-mono text-2xs text-caramel">
+		<a
+			href={`mailto:${contact.email}`}
+			class="font-display text-2xl text-vanilla italic wrap-anywhere"
+		>
+			{contact.email}
+		</a>
+		<p>
+			<a href={contact.github}>
+				GitHub <span aria-hidden="true">↗</span>
+			</a>
+			<span aria-hidden="true">·</span>
+			<a href={contact.linkedin}>
+				LinkedIn <span aria-hidden="true">↗</span>
+			</a>
+		</p>
+	</div>
+</dialog>
+
+<script>
+	const menu = document.querySelector('#mobile-menu');
+
+	if (menu instanceof HTMLDialogElement) {
+		document
+			.querySelector('[data-menu-open]')
+			?.addEventListener('click', () => menu.showModal());
+
+		menu.addEventListener('click', (event) => {
+			if (event.target instanceof Element && event.target.closest('a, [data-menu-close]')) {
+				menu.close();
+			}
+		});
+
+		// A modal hidden by `md:` would leave the page inert.
+		matchMedia('(min-width: 48rem)').addEventListener('change', (event) => {
+			if (event.matches) menu.close();
+		});
+	}
+</script>

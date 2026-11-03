@@ -47,6 +47,9 @@
 	--text-display: clamp(4rem, 11vw, 11.25rem); /* 64 → 180px */
 	--text-display--line-height: 0.85;
 	--text-display--letter-spacing: -0.04em;
+	--text-menu: 2.875rem;
+	--text-menu--line-height: 1;
+	--text-menu--letter-spacing: -0.03em;
 
 	--leading-relaxed: 1.6;
 	--tracking-snug: -0.02em;
@@ -77,6 +80,10 @@
 		html {
 			scroll-behavior: smooth;
 		}
+	}
+
+	html:has(dialog:modal) {
+		overflow: hidden;
 	}
 
 	body {
