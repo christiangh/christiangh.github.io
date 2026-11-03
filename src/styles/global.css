@@ -50,6 +50,9 @@
 	--text-menu: 2.875rem;
 	--text-menu--line-height: 1;
 	--text-menu--letter-spacing: -0.03em;
+	/* Braces wrap the hero name and role */
+	--text-brace: calc(var(--text-hero) * 3.3);
+	--text-brace--line-height: 0.78;
 
 	--leading-relaxed: 1.6;
 	--tracking-snug: -0.02em;

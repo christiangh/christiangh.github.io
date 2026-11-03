@@ -13,4 +13,10 @@ export const es = {
 	'section.experience.title': 'Experien*cia*',
 	'section.projects.title': 'Proyec*tos*',
 	'section.contact.title': 'Contac*to*',
+
+	'hero.role': 'Desarrollador *frontend*',
+	'hero.tagline':
+		'Desarrollador frontend senior. Arquitecturas escalables, interfaces rápidas y accesibles.',
+	'hero.location': 'Valencia, España',
+	'hero.cta': 'ver proyectos',
 } as const;

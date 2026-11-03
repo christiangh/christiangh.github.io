@@ -1,0 +1,30 @@
+---
+import { getLang, useTranslations } from '../i18n/utils';
+
+const t = useTranslations(getLang(Astro.currentLocale));
+
+const code = `const christian = {
+  role: 'senior frontend developer',
+  location: '${t('hero.location')}',
+  stack: [
+    'Angular',
+    'Astro',
+    'TypeScript',
+    'JavaScript',
+    'CSS',
+    'Sass',
+    'Tailwind CSS',
+  ],
+  focus: ['architecture', 'performance', 'accessibility'],
+};`;
+---
+
+<div class="max-w-xl grow basis-100 overflow-hidden rounded-panel bg-ink shadow-hard-lg md:ms-auto">
+	<div class="flex items-center gap-2 border-b border-bark px-4 py-3">
+		<span aria-hidden="true" class="size-2.75 rounded-full bg-cocoa"></span>
+		<span aria-hidden="true" class="size-2.75 rounded-full bg-caramel"></span>
+		<span aria-hidden="true" class="size-2.75 rounded-full bg-vanilla"></span>
+		<span class="ms-3 font-mono text-2xs text-caramel">christian.ts</span>
+	</div>
+	<pre class="p-6 font-mono text-sm leading-relaxed whitespace-pre-wrap text-cream">{code}</pre>
+</div>

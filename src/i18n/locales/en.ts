@@ -14,4 +14,10 @@ export const en = {
 	'section.experience.title': 'Experi*ence*',
 	'section.projects.title': 'Proj*ects*',
 	'section.contact.title': 'Con*tact*',
+
+	'hero.role': '*Frontend* developer',
+	'hero.tagline':
+		'Senior frontend developer. Scalable architectures, fast and accessible interfaces.',
+	'hero.location': 'Valencia, Spain',
+	'hero.cta': 'see projects',
 } satisfies Record<keyof typeof es, string>;
