@@ -9,6 +9,7 @@ Personal portfolio of Christian García Herreras, senior frontend developer.
 - [Astro](https://astro.build) (static output)
 - TypeScript (strict)
 - Deployed to GitHub Pages via GitHub Actions
+- [Tailwind CSS v4](https://tailwindcss.com)
 
 ## Requirements
 

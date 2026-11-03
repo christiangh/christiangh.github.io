@@ -17,6 +17,7 @@ Personal portfolio built with Astro, deployed to GitHub Pages as a static site.
 - Static output only: no SSR adapters, no server endpoints.
 - Do not add dependencies without asking first.
 - Keep this file and `README.md` in sync when conventions or structure change.
+- Styling: Tailwind CSS v4. Design tokens live in `@theme` in `src/styles/global.css`; use only theme utilities, avoid arbitrary values.
 
 ## Development
 
