@@ -18,6 +18,8 @@ Personal portfolio built with Astro, deployed to GitHub Pages as a static site.
 - Do not add dependencies without asking first.
 - Keep this file and `README.md` in sync when conventions or structure change.
 - Styling: Tailwind CSS v4. Design tokens live in `@theme` in `src/styles/global.css`; use only theme utilities, avoid arbitrary values.
+- i18n: Spanish (default, no prefix) and English (`/en/`). UI strings live in `src/i18n/locales/{es,en}.ts`; `es.ts` is the source of truth and `en.ts` must define the same keys. Prefix keys by section (`nav.`, `projects.`…).
+- Never hardcode user-facing text in components; use `useTranslations` from `src/i18n/utils.ts`.
 
 ## Development
 

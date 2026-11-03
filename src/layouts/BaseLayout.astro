@@ -1,5 +1,6 @@
 ---
 import { Font } from 'astro:assets';
+import { getLang, useTranslations } from '../i18n/utils';
 import '../styles/global.css';
 
 interface Props {
@@ -7,16 +8,16 @@ interface Props {
 	description?: string;
 }
 
-const {
-	title = 'Christian García Herreras · Desarrollador frontend senior',
-	description = 'Desarrollador frontend senior especializado en Angular. Diseño arquitecturas frontend escalables y trabajo con Astro e IA aplicada al desarrollo.',
-} = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+
+const { title = t('meta.title'), description = t('meta.description') } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
