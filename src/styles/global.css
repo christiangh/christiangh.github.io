@@ -71,3 +71,21 @@
 	--font-sans: var(--font-bricolage-grotesque);
 	--font-mono: var(--font-jetbrains-mono);
 }
+
+@layer base {
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+
+	body {
+		background-color: var(--color-ink);
+		color: var(--color-ink);
+	}
+
+	::selection {
+		background-color: var(--color-vanilla);
+		color: var(--color-ink);
+	}
+}

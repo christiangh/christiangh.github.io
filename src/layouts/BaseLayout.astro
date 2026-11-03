@@ -1,0 +1,41 @@
+---
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Christian García Herreras · Desarrollador frontend senior',
+	description = 'Desarrollador frontend senior especializado en Angular. Diseño arquitecturas frontend escalables y trabajo con Astro e IA aplicada al desarrollo.',
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#1c130b" />
+
+		<Font cssVariable="--font-libre-bodoni" preload />
+		<Font cssVariable="--font-bricolage-grotesque" preload />
+		<Font cssVariable="--font-jetbrains-mono" preload />
+	</head>
+	<body class="antialiased">
+		<slot />
+	</body>
+</html>
