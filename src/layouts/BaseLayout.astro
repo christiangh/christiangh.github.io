@@ -2,6 +2,7 @@
 import { Font } from 'astro:assets';
 import { getLang, useTranslations } from '../i18n/utils';
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
 
 interface Props {
 	title?: string;
@@ -37,6 +38,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 		<Font cssVariable="--font-jetbrains-mono" preload />
 	</head>
 	<body class="antialiased">
+		<Nav />
 		<slot />
 	</body>
 </html>
