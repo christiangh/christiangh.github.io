@@ -1,1 +1,65 @@
 @import 'tailwindcss';
+
+/**
+ * Design tokens, extracted from docs/design.
+ * Each variable generates its utilities (e.g. --color-ink → bg-ink, text-ink).
+ * Font families are added with the Astro Fonts API.
+ */
+@theme {
+	/* Remove Tailwind defaults: only the design's palette and type scale exist */
+	--color-*: initial;
+	--text-*: initial;
+
+	/* Color palette */
+	--color-ink: #1c130b;
+	--color-bark: #3a2817;
+	--color-cocoa: #7a5636;
+	--color-caramel: #b8956a;
+	--color-latte: #d9c9a3;
+	--color-cream: #f4ead0;
+	--color-paper: #fbf5e4;
+	--color-vanilla: #efc94c;
+	--color-gold: #e3b321;
+
+	/* Placeholder stripes (image slots) */
+	--color-stripe-light-1: #ede0bc;
+	--color-stripe-light-2: #e6d7ae;
+	--color-stripe-dark-1: #2a1d12;
+	--color-stripe-dark-2: #241810;
+
+	/* Accent, switchable from the hero swatches */
+	--color-accent: var(--color-cocoa);
+
+	/* Type scale */
+	--text-2xs: 0.75rem; /* 12px */
+	--text-xs: 0.8125rem; /* 13px */
+	--text-sm: 0.875rem; /* 14px */
+	--text-base: 1rem; /* 16px */
+	--text-lg: clamp(1.0625rem, 1.4vw, 1.25rem); /* 17 → 20px */
+	--text-xl: clamp(1.125rem, 1.8vw, 1.5rem); /* 18 → 24px */
+	--text-2xl: clamp(1.75rem, 3.4vw, 3rem); /* 28 → 48px */
+	--text-2xl--line-height: 1;
+	--text-3xl: clamp(2rem, 5vw, 5rem); /* 32 → 80px */
+	--text-3xl--line-height: 1;
+	--text-hero: clamp(2.75rem, 10vw, 7.5rem); /* 44 → 120px */
+	--text-hero--line-height: 0.88;
+	--text-hero--letter-spacing: -0.045em;
+	--text-display: clamp(4rem, 11vw, 11.25rem); /* 64 → 180px */
+	--text-display--line-height: 0.85;
+	--text-display--letter-spacing: -0.04em;
+
+	--leading-relaxed: 1.6;
+	--tracking-snug: -0.02em;
+
+	/* Layout */
+	--container-site: 87.5rem; /* 1400px */
+	--spacing-gutter: clamp(1rem, 4vw, 3rem); /* 16 → 48px */
+	--spacing-section: clamp(5rem, 10vw, 8.75rem); /* 80 → 140px */
+
+	/* Radii */
+	--radius-panel: 0.625rem; /* 10px */
+
+	/* Hard shadows, no blur */
+	--shadow-hard: 6px 6px 0 var(--color-ink);
+	--shadow-hard-lg: 12px 12px 0 var(--color-accent);
+}
