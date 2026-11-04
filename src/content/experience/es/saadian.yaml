@@ -1,0 +1,17 @@
+role: Desarrollador front
+company: Saadian
+start: 2015
+end: 2023
+location: Dublín
+summary: >-
+  *Desarrollo de aplicaciones web* para clientes de Irlanda, Reino Unido y Estados Unidos.
+  Responsable del frontend de *PINS* y *Savvy*, herramientas de gestión penitenciaria y judicial,
+  desde la arquitectura hasta el rediseño, apoyándome en *Angular* desde sus betas hasta la versión 13.
+  También desarrollé una app móvil híbrida con *AngularJS* y *PhoneGap* para el envío masivo de SMS.
+stack:
+  - AngularJS
+  - Angular
+  - TypeScript
+  - RxJS
+  - PhoneGap (Cordova)
+  - Sass

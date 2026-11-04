@@ -1,0 +1,17 @@
+role: Frontend Developer
+company: Saadian
+start: 2015
+end: 2023
+location: Dublin
+summary: >-
+  *Web application development* for clients in Ireland, the United Kingdom and the United States.
+  Responsible for the frontend of *PINS* and *Savvy*, prison and court management tools,
+  from architecture to redesign, working with *Angular* from its betas up to version 13.
+  I also built a hybrid mobile app with *AngularJS* and *PhoneGap* for bulk SMS delivery.
+stack:
+  - AngularJS
+  - Angular
+  - TypeScript
+  - RxJS
+  - PhoneGap (Cordova)
+  - Sass

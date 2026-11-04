@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import { getLang, useTranslations } from '../i18n/utils';
+import Emphasis from './Emphasis.astro';
+import SectionHeading from './SectionHeading.astro';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const entries = (await getCollection('experience', ({ id }) => id.startsWith(`${lang}/`))).sort(
+	(a, b) => b.data.start - a.data.start,
+);
+---
+
+<section
+	id="experience"
+	aria-labelledby="experience-title"
+	class="bg-ink px-gutter py-section text-cream"
+>
+	<div class="mx-auto flex max-w-site flex-col gap-12">
+		<SectionHeading id="experience" detail="git log --author=me" tone="dark" />
+		<div class="border-t border-cocoa">
+			{entries.map(({ data }, index) => (
+				<details name="experience" open={index === 0} class="group border-b border-cocoa">
+					<summary class="flex cursor-pointer items-center gap-6 py-8">
+						<span class="flex min-w-0 flex-1 flex-col gap-2">
+							<span class="font-mono text-xs text-caramel">
+								{data.start} — {data.end ?? t('experience.present')} ·{' '}
+								{data.location}
+							</span>
+							<h3 class="font-display text-3xl text-pretty">
+								{data.role} <span class="text-vanilla italic">@{data.company}</span>
+							</h3>
+						</span>
+						<span
+							aria-hidden="true"
+							class="flex size-14 flex-none items-center justify-center rounded-full border border-vanilla font-mono text-vanilla"
+						>
+							<span class="group-open:hidden">+</span>
+							<span class="hidden group-open:inline">−</span>
+						</span>
+					</summary>
+					<div class="flex flex-col gap-6 pb-10 md:flex-row md:gap-10">
+						<p class="max-w-text text-base leading-relaxed text-pretty text-latte">
+							<Emphasis text={data.summary} class="text-vanilla not-italic" />
+						</p>
+						<ul
+							aria-label={t('experience.stack')}
+							class="flex flex-wrap content-start gap-x-3 gap-y-1 font-mono text-xs text-vanilla"
+						>
+							{data.stack.map((tech, i) => (
+								<li class="flex gap-3">
+									{i > 0 && <span aria-hidden="true">·</span>}
+									{tech}
+								</li>
+							))}
+						</ul>
+					</div>
+				</details>
+			))}
+		</div>
+	</div>
+</section>

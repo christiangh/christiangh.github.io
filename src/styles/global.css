@@ -119,4 +119,9 @@
 		background-color: var(--color-vanilla);
 		color: var(--color-ink);
 	}
+
+	/* Safari keeps its own disclosure marker even when summary is not a list item */
+	summary::-webkit-details-marker {
+		display: none;
+	}
 }

@@ -29,4 +29,7 @@ export const es = {
 
 	'education.kind.degree': 'titulación',
 	'education.kind.cert': 'certificado',
+
+	'experience.present': 'hoy',
+	'experience.stack': 'Tecnologías',
 } as const;

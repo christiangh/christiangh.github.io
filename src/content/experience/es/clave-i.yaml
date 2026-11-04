@@ -1,0 +1,14 @@
+role: Desarrollador front senior
+company: ClaveI
+start: 2023
+end: 2024
+location: Elche
+summary: >-
+  *Definición e implementación* de nuevas pantallas, componentes reutilizables y tests dentro del proyecto *GoCloud*, con el objetivo de migrar software a la *nube*.
+stack:
+  - Angular
+  - TypeScript
+  - RxJS
+  - Nx
+  - Storybook
+  - NgRx

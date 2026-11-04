@@ -1,0 +1,14 @@
+role: Senior Frontend Developer
+company: ClaveI
+start: 2023
+end: 2024
+location: Elche
+summary: >-
+  *Design and implementation* of new screens, reusable components and tests within the *GoCloud* project, aimed at migrating software to the *cloud*.
+stack:
+  - Angular
+  - TypeScript
+  - RxJS
+  - Nx
+  - Storybook
+  - NgRx

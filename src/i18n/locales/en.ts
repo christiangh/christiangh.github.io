@@ -30,4 +30,7 @@ export const en = {
 
 	'education.kind.degree': 'degree',
 	'education.kind.cert': 'certificate',
+
+	'experience.present': 'present',
+	'experience.stack': 'Technologies',
 } satisfies Record<keyof typeof es, string>;

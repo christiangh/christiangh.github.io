@@ -1,0 +1,14 @@
+role: Fullstack Developer
+company: Rimontgó
+start: 2010
+end: 2014
+location: Valencia
+summary: >-
+  *Maintenance of the websites* of the Rimontgó real estate agency, the EREN real estate association and their blogs, all in *multiple languages*. Development of a *property management system* (CMS) so the sales team could update the websites.
+stack:
+  - PHP
+  - MySQL
+  - JavaScript
+  - jQuery
+  - HTML
+  - CSS
