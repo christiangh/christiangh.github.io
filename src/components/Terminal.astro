@@ -1,5 +1,6 @@
 ---
 import { getLang, useTranslations } from '../i18n/utils';
+import AccentPicker from './AccentPicker.astro';
 
 const t = useTranslations(getLang(Astro.currentLocale));
 
@@ -30,6 +31,7 @@ const code = `const christian = {
 		<code class="col-start-1 row-start-1 group-data-typing:opacity-0">{code}</code>
 		<span aria-hidden="true" class="col-start-1 row-start-1"><span data-terminal-output></span><span class="hidden h-4.25 w-2 bg-vanilla align-middle group-data-typing:inline-block motion-safe:animate-blink"></span></span>
 	</pre>
+	<AccentPicker />
 </div>
 
 <script>

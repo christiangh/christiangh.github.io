@@ -1,0 +1,55 @@
+---
+import { getLang, useTranslations } from '../i18n/utils';
+
+const t = useTranslations(getLang(Astro.currentLocale));
+
+const swatches = [
+	{ value: 'cocoa', color: 'bg-cocoa' },
+	{ value: 'gold', color: 'bg-gold' },
+	{ value: 'caramel', color: 'bg-caramel' },
+] as const;
+---
+
+<fieldset
+	data-accent-picker
+	hidden
+	class="flex items-center gap-2.5 border-t border-bark px-6 py-3.5 font-mono text-2xs text-caramel"
+>
+	<legend class="sr-only">{t('hero.accent.label')}</legend>
+	<span aria-hidden="true">accent =</span>
+	{swatches.map(({ value, color }, index) => (
+		<label>
+			<input
+				type="radio"
+				name="accent"
+				value={value}
+				checked={index === 0}
+				class="peer sr-only"
+			/>
+			<span
+				class:list={[
+					'block size-6.5 cursor-pointer rounded-full outline-offset-3 peer-checked:outline-2 peer-checked:outline-cream peer-focus-visible:outline-vanilla',
+					color,
+				]}
+			></span>
+			<span class="sr-only">{t(`hero.accent.${value}`)}</span>
+		</label>
+	))}
+</fieldset>
+
+<script>
+	const picker = document.querySelector<HTMLFieldSetElement>('[data-accent-picker]');
+
+	if (picker) {
+		picker.hidden = false;
+
+		picker.addEventListener('change', (event) => {
+			if (event.target instanceof HTMLInputElement) {
+				document.documentElement.style.setProperty(
+					'--color-accent',
+					`var(--color-${event.target.value})`,
+				);
+			}
+		});
+	}
+</script>

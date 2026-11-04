@@ -19,4 +19,9 @@ export const es = {
 		'Desarrollador frontend senior. Arquitecturas escalables, interfaces rápidas y accesibles.',
 	'hero.location': 'Valencia, España',
 	'hero.cta': 'ver proyectos',
+
+	'hero.accent.label': 'Color de acento',
+	'hero.accent.cocoa': 'Cacao',
+	'hero.accent.gold': 'Oro',
+	'hero.accent.caramel': 'Caramelo',
 } as const;

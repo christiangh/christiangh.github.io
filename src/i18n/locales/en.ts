@@ -20,4 +20,9 @@ export const en = {
 		'Senior frontend developer. Scalable architectures, fast and accessible interfaces.',
 	'hero.location': 'Valencia, Spain',
 	'hero.cta': 'see projects',
+
+	'hero.accent.label': 'Accent color',
+	'hero.accent.cocoa': 'Cocoa',
+	'hero.accent.gold': 'Gold',
+	'hero.accent.caramel': 'Caramel',
 } satisfies Record<keyof typeof es, string>;
