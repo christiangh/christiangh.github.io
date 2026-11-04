@@ -24,4 +24,6 @@ export const es = {
 	'hero.accent.cocoa': 'Cacao',
 	'hero.accent.gold': 'Oro',
 	'hero.accent.caramel': 'Caramelo',
+
+	'about.photo.alt': 'Retrato de Christian García Herreras',
 } as const;

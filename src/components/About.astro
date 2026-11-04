@@ -1,0 +1,40 @@
+---
+import { getEntry, render } from 'astro:content';
+import { Picture } from 'astro:assets';
+import { getLang, useTranslations } from '../i18n/utils';
+import Emphasis from './Emphasis.astro';
+import SectionHeading from './SectionHeading.astro';
+import portrait from '../assets/christiangh.jpg';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const about = await getEntry('about', lang);
+
+if (!about) throw new Error(`Missing about content for "${lang}"`);
+
+const { Content } = await render(about);
+---
+
+<section id="about" aria-labelledby="about-title" class="bg-ink px-gutter py-section text-cream">
+	<div class="mx-auto flex max-w-site flex-col gap-12">
+		<SectionHeading id="about" detail="about-me.ts" tone="dark" />
+		<div class="grid items-center gap-10 md:grid-cols-2 lg:gap-24">
+			<Picture
+				src={portrait}
+				alt={t('about.photo.alt')}
+				formats={['avif', 'webp']}
+				widths={[420, 840]}
+				sizes="(min-width: 420px) 420px, 100vw"
+				class="h-auto w-full max-w-105"
+			/>
+			<div class="flex flex-col gap-8">
+				<h3 class="font-display text-headline text-pretty">
+					<Emphasis text={about.data.headline} class="text-vanilla" />
+				</h3>
+				<div class="flex max-w-text flex-col gap-8 text-lg leading-relaxed text-pretty text-latte">
+					<Content />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

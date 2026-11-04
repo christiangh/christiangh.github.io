@@ -25,4 +25,6 @@ export const en = {
 	'hero.accent.cocoa': 'Cocoa',
 	'hero.accent.gold': 'Gold',
 	'hero.accent.caramel': 'Caramel',
+
+	'about.photo.alt': 'Portrait of Christian García Herreras',
 } satisfies Record<keyof typeof es, string>;

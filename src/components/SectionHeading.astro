@@ -1,0 +1,27 @@
+---
+import { getLang, useTranslations } from '../i18n/utils';
+import { sections, type SectionId } from '../lib/sections';
+import Emphasis from './Emphasis.astro';
+
+interface Props {
+	id: SectionId;
+	detail: string;
+	tone: 'dark' | 'light';
+}
+
+const { id, detail, tone } = Astro.props;
+const t = useTranslations(getLang(Astro.currentLocale));
+const number = String(sections.indexOf(id) + 1).padStart(2, '0');
+---
+
+<div class="flex flex-wrap items-end justify-between gap-6">
+	<h2 id={`${id}-title`} class="font-display text-display">
+		<Emphasis
+			text={t(`section.${id}.title`)}
+			class={tone === 'dark' ? 'text-vanilla' : 'text-cocoa'}
+		/>
+	</h2>
+	<p class:list={['font-mono text-xs', tone === 'dark' ? 'text-caramel' : 'text-bark']}>
+		{number} // {detail}
+	</p>
+</div>
