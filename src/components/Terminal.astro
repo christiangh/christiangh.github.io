@@ -6,16 +6,13 @@ const t = useTranslations(getLang(Astro.currentLocale));
 const code = `const christian = {
   role: 'senior frontend developer',
   location: '${t('hero.location')}',
-  stack: [
-    'Angular',
-    'Astro',
-    'TypeScript',
-    'JavaScript',
-    'CSS',
-    'Sass',
-    'Tailwind CSS',
+  focus: [
+    'architecture',
+    'performance',
+    'accessibility',
   ],
-  focus: ['architecture', 'performance', 'accessibility'],
+  exploring: 'AI applied to development',
+  requires: () => '☕'
 };`;
 ---
 
