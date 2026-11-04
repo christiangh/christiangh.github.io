@@ -68,6 +68,15 @@
 	/* Hard shadows, no blur */
 	--shadow-hard: 6px 6px 0 var(--color-ink);
 	--shadow-hard-lg: 12px 12px 0 var(--color-accent);
+
+	/* Animations */
+	--animate-blink: blink 1s steps(1) infinite;
+
+	@keyframes blink {
+		50% {
+			opacity: 0;
+		}
+	}
 }
 
 /* Font families, provided by the Astro Fonts API (astro.config.mjs) */

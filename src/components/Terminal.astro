@@ -23,5 +23,31 @@ const code = `const christian = {
 		<span aria-hidden="true" class="size-2.75 rounded-full bg-vanilla"></span>
 		<span class="ms-3 font-mono text-2xs text-caramel">christian.ts</span>
 	</div>
-	<pre class="p-6 font-mono text-sm leading-relaxed whitespace-pre-wrap text-cream">{code}</pre>
+	<pre
+		data-terminal
+		class="group grid p-6 font-mono text-sm leading-relaxed whitespace-pre-wrap text-cream"
+	>
+		<code class="col-start-1 row-start-1 group-data-typing:opacity-0">{code}</code>
+		<span aria-hidden="true" class="col-start-1 row-start-1"><span data-terminal-output></span><span class="hidden h-4.25 w-2 bg-vanilla align-middle group-data-typing:inline-block motion-safe:animate-blink"></span></span>
+	</pre>
 </div>
+
+<script>
+	const terminal = document.querySelector<HTMLElement>('[data-terminal]');
+	const output = terminal?.querySelector('[data-terminal-output]');
+	const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	if (terminal && output && !reducedMotion) {
+		// Array.from splits by code point, so emoji are never cut in half.
+		const chars = Array.from(terminal.querySelector('code')?.textContent ?? '');
+		let index = 0;
+
+		terminal.dataset.typing = '';
+
+		const timer = setInterval(() => {
+			index += 1;
+			output.textContent = chars.slice(0, index).join('');
+			if (index >= chars.length) clearInterval(timer);
+		}, 30);
+	}
+</script>
