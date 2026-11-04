@@ -24,6 +24,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<!-- Keeps the unfinished site out of search results. Remove before launch. -->
+		<meta name="robots" content="noindex" />
 		<link rel="canonical" href={canonicalUrl} />
 		<meta name="generator" content={Astro.generator} />
 
