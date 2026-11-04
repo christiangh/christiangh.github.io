@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import { getLang, useTranslations } from '../i18n/utils';
+import SectionHeading from './SectionHeading.astro';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const entries = (await getCollection('education', ({ id }) => id.startsWith(`${lang}/`))).sort(
+	(a, b) => b.data.end - a.data.end,
+);
+---
+
+<section
+	id="education"
+	aria-labelledby="education-title"
+	class="bg-paper px-gutter py-section text-ink"
+>
+	<div class="mx-auto flex max-w-site flex-col gap-12">
+		<SectionHeading id="education" detail="ls ./education" tone="light" />
+		<ul class="border-t-2 border-ink">
+			{entries.map(({ data }) => (
+				<li class="flex flex-wrap items-baseline gap-x-6 gap-y-2 border-b border-ink py-7">
+					<p class="w-full flex-none font-mono text-sm text-cocoa sm:w-35">{data.end}</p>
+					<div class="flex min-w-0 flex-1 flex-col gap-1.5">
+						<h3 class="font-display text-2xl">{data.title}</h3>
+						<p class="text-base text-bark">{data.institution}</p>
+					</div>
+					<span
+						class:list={[
+							'flex-none border px-2.5 py-1.25 font-mono text-2xs',
+							data.kind === 'degree' ? 'border-vanilla bg-vanilla' : 'border-ink',
+						]}
+					>
+						.{t(`education.kind.${data.kind}`)}
+					</span>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>

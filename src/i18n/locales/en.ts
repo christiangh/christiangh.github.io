@@ -27,4 +27,7 @@ export const en = {
 	'hero.accent.caramel': 'Caramel',
 
 	'about.photo.alt': 'Portrait of Christian García Herreras',
+
+	'education.kind.degree': 'degree',
+	'education.kind.cert': 'certificate',
 } satisfies Record<keyof typeof es, string>;

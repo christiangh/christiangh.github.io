@@ -9,7 +9,7 @@ export const es = {
 
 	// `*text*` marks the emphasized part, rendered in italics.
 	'section.about.title': 'Sobre *mí*',
-	'section.education.title': 'Educa*ción*',
+	'section.education.title': 'Forma*ción*',
 	'section.experience.title': 'Experien*cia*',
 	'section.projects.title': 'Proyec*tos*',
 	'section.contact.title': 'Contac*to*',
@@ -26,4 +26,7 @@ export const es = {
 	'hero.accent.caramel': 'Caramelo',
 
 	'about.photo.alt': 'Retrato de Christian García Herreras',
+
+	'education.kind.degree': 'titulación',
+	'education.kind.cert': 'certificado',
 } as const;
