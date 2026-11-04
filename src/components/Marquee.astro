@@ -1,0 +1,25 @@
+---
+import { technologies } from '../lib/technologies';
+---
+
+<div class="overflow-hidden border-y-2 border-ink bg-vanilla py-4.5 text-ink">
+	<div class="flex w-max motion-safe:animate-marquee">
+		{[false, true].map((duplicate) => (
+			<ul
+				aria-hidden={duplicate ? 'true' : undefined}
+				class="flex items-center gap-4.5 pe-4.5"
+			>
+				{technologies.map((technology, index) => (
+					<li class="flex items-center gap-4.5">
+						<span class:list={['font-display text-3xl', { italic: index % 2 === 1 }]}>
+							{technology}
+						</span>
+						<span aria-hidden="true" class="text-base text-cocoa">
+							✿
+						</span>
+					</li>
+				))}
+			</ul>
+		))}
+	</div>
+</div>
