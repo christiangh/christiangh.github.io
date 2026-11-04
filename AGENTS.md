@@ -12,9 +12,10 @@ Personal portfolio built with Astro, deployed to GitHub Pages as a static site.
 ## Conventions
 
 - Code, comments, commits and branch names in English. Site content in Spanish.
-- Comment only what the code cannot say: non-obvious decisions, workarounds or unusual practices. No comments that restate the code.
+- Comment only what the code cannot say: non-obvious decisions, workarounds or unusual practices. No comments that restate the code. Design tokens note their px equivalent or purpose.
+- Content: interface strings go in the i18n dictionaries. Section content (long text and repeated entries such as experience or projects) goes in Astro content collections under `src/content/`, one file per locale.
 - Indentation: tabs (size 4); YAML uses 2 spaces. Follow `.editorconfig`.
-- Commits follow Conventional Commits 1.0, short format (`type: description`).
+- Commits follow Conventional Commits 1.0, short format (`type(scope): description`).
 - Static output only: no SSR adapters, no server endpoints.
 - Do not add dependencies without asking first.
 - Keep this file and `README.md` in sync when conventions or structure change.
