@@ -1,4 +1,4 @@
-role: Desarrollador front
+role: Frontend
 company: Saadian
 start: 2015
 end: 2023
@@ -11,7 +11,9 @@ summary: >-
 stack:
   - AngularJS
   - Angular
+  - Angular Material
   - TypeScript
   - RxJS
   - PhoneGap (Cordova)
   - Sass
+  - Selenium

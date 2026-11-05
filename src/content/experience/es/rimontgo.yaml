@@ -1,4 +1,4 @@
-role: Desarrollador fullstack
+role: Fullstack junior
 company: Rimontgó
 start: 2010
 end: 2014
@@ -6,9 +6,10 @@ location: Valencia
 summary: >-
   *Mantenimiento de las webs* de la inmobiliaria Rimontgó, la asociación de inmobiliarias EREN y de sus blogs, todos en *diferentes idiomas*. Desarrollo de un *sistema de gestión de propiedades* (CMS) para actualizar las webs por parte de los comerciales.
 stack:
-  - PHP
-  - MySQL
-  - JavaScript
-  - jQuery
   - HTML
   - CSS
+  - JavaScript
+  - jQuery
+  - WordPress
+  - PHP
+  - MySQL

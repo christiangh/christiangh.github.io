@@ -1,4 +1,4 @@
-role: Desarrollador front senior
+role: Frontend senior
 company: ClaveI
 start: 2023
 end: 2024
@@ -12,3 +12,4 @@ stack:
   - Nx
   - Storybook
   - NgRx
+  - Cypress

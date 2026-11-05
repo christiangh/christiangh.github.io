@@ -1,13 +1,15 @@
-role: Líder técnico de front
+role: Líder técnico frontend
 company: Disid
 start: 2024
 location: Valencia
 summary: >-
-  *Consultoría* en diferentes proyectos como desarrollador, líder técnico o arquitecto de frontend en empresas como *Romeu* o *Sanitas*, definiendo arquitecturas para nuevos productos o mejorando los existentes.
+  *Consultoría* en diferentes proyectos como desarrollador, arquitecto de frontend o líder técnico en empresas como *Grupo Romeu* o *Sanitas*, definiendo arquitecturas para nuevos productos o mejorando los existentes.
 stack:
   - Angular
   - TypeScript
-  - RxJS
+  - Native Federation
   - Nx
   - Storybook
-  - Native Federation
+  - Jest
+  - Cypress
+  - Playwright

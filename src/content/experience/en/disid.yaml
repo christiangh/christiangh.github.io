@@ -3,11 +3,13 @@ company: Disid
 start: 2024
 location: Valencia
 summary: >-
-  *Consulting* on several projects as frontend developer, tech lead or architect for companies such as *Romeu* and *Sanitas*, defining architectures for new products or improving existing ones.
+  *Consulting* on several projects as frontend developer, frontend architect or tech lead for companies such as *Grupo Romeu* and *Sanitas*, defining architectures for new products or improving existing ones.
 stack:
   - Angular
   - TypeScript
-  - RxJS
+  - Native Federation
   - Nx
   - Storybook
-  - Native Federation
+  - Jest
+  - Cypress
+  - Playwright
