@@ -1,0 +1,9 @@
+title: Portfolio
+summary: >-
+  Esta web. Estática, bilingüe y accesible, con Astro, Tailwind CSS y el JavaScript justo.
+stack:
+  - Astro
+  - TypeScript
+  - Tailwind CSS
+repo: https://github.com/christiangh/christiangh.github.io
+order: 2

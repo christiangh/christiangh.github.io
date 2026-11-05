@@ -123,3 +123,12 @@
 		display: none;
 	}
 }
+
+/* Diagonal stripes for image slots without a screenshot */
+@utility bg-stripes-light {
+	background-image: repeating-linear-gradient(
+		-45deg,
+		var(--color-stripe-light-1) 0 0.875rem,
+		var(--color-stripe-light-2) 0.875rem 1.75rem
+	);
+}

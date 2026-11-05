@@ -1,0 +1,9 @@
+title: Portfolio
+summary: >-
+  This site. Static, bilingual and accessible, built with Astro, Tailwind CSS and just enough JavaScript.
+stack:
+  - Astro
+  - TypeScript
+  - Tailwind CSS
+repo: https://github.com/christiangh/christiangh.github.io
+order: 2

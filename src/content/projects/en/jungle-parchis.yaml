@@ -1,0 +1,15 @@
+title: Jungle Parchís
+summary: >-
+  Jungle-themed Parchís (Ludo) for the browser. The rules engine is plain
+  TypeScript, kept apart from Angular, and every feature starts from an
+  approved spec and tests written before the code.
+stack:
+  - Angular
+  - TypeScript
+  - Vitest
+  - Playwright
+  - Spec Driven Development
+  - AI
+repo: https://github.com/christiangh/jungle-parchis-sdd
+demo: https://christiangh.github.io/jungle-parchis-sdd/
+order: 1

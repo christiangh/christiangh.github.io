@@ -32,4 +32,18 @@ const experience = defineCollection({
 	}),
 });
 
-export const collections = { about, education, experience };
+const projects = defineCollection({
+	loader: glob({ pattern: '**/*.yaml', base: './src/content/projects' }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			summary: z.string(),
+			stack: z.array(z.string()),
+			repo: z.url(),
+			demo: z.url().optional(),
+			image: image().optional(),
+			order: z.number().int(),
+		}),
+});
+
+export const collections = { about, education, experience, projects };

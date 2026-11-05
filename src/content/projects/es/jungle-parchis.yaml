@@ -1,0 +1,15 @@
+title: Jungle Parchís
+summary: >-
+  Parchís con temática de selva para el navegador. El motor de reglas es
+  TypeScript puro, separado de Angular, y cada funcionalidad nace de una
+  especificación aprobada y de tests escritos antes que el código.
+stack:
+  - Angular
+  - TypeScript
+  - Vitest
+  - Playwright
+  - Spec Driven Development
+  - IA
+repo: https://github.com/christiangh/jungle-parchis-sdd
+demo: https://christiangh.github.io/jungle-parchis-sdd/
+order: 1

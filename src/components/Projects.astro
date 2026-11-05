@@ -1,0 +1,74 @@
+---
+import { Picture } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { getLang, useTranslations } from '../i18n/utils';
+import SectionHeading from './SectionHeading.astro';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const entries = (await getCollection('projects', ({ id }) => id.startsWith(`${lang}/`))).sort(
+	(a, b) => a.data.order - b.data.order,
+);
+---
+
+<section
+	id="projects"
+	aria-labelledby="projects-title"
+	class="bg-cream px-gutter py-section text-ink"
+>
+	<div class="mx-auto flex max-w-site flex-col gap-12">
+		<SectionHeading id="projects" detail="npm run showcase" tone="light" />
+		<ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{entries.map(({ data }, index) => (
+				<li class="relative flex flex-col border-2 border-ink bg-paper hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard has-focus-visible:shadow-hard motion-safe:transition">
+					<div class="relative aspect-16/10 border-b-2 border-ink bg-stripes-light">
+						{data.image ? (
+							<Picture
+								src={data.image}
+								alt=""
+								formats={['avif', 'webp']}
+								widths={[480, 960]}
+								sizes="(min-width: 64rem) 33vw, (min-width: 40rem) 50vw, 100vw"
+								class="size-full object-cover"
+							/>
+						) : (
+							<span class="absolute bottom-3 left-3 font-mono text-2xs text-bark">
+								[ {t('projects.placeholder')} ]
+							</span>
+						)}
+						<span
+							aria-hidden="true"
+							class="absolute right-3 bottom-3 bg-ink px-2 py-1 font-mono text-2xs text-vanilla"
+						>
+							{String(index + 1).padStart(2, '0')}
+						</span>
+					</div>
+					<div class="flex flex-1 flex-col gap-3 p-6">
+						<h3 class="flex items-start justify-between gap-4 font-display text-2xl">
+							<a href={data.demo ?? data.repo} class="after:absolute after:inset-0">
+								{data.title}
+							</a>
+							<span aria-hidden="true" class="font-sans text-base">
+								↗
+							</span>
+						</h3>
+						<p class="text-base leading-relaxed text-pretty text-bark">
+							{data.summary}
+						</p>
+						<ul
+							aria-label={t('projects.stack')}
+							class="mt-auto flex flex-wrap gap-x-2 pt-2 font-mono text-2xs text-cocoa"
+						>
+							{data.stack.map((tech, i) => (
+								<li class="flex gap-2">
+									{i > 0 && <span aria-hidden="true">·</span>}
+									{tech}
+								</li>
+							))}
+						</ul>
+					</div>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>

@@ -30,4 +30,7 @@ export const en = {
 
 	'experience.present': 'present',
 	'experience.stack': 'Technologies',
+
+	'projects.placeholder': 'project screenshot',
+	'projects.stack': 'Technologies',
 } satisfies Record<keyof typeof es, string>;

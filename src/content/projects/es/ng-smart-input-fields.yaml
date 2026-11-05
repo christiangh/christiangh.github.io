@@ -1,0 +1,11 @@
+title: NG Smart Input Fields
+summary: >-
+  Campos de formulario sobre Angular Material que ahorran configuración
+  repetida. El mismo componente funciona dentro de un formulario reactivo,
+  con un control externo, con ngModel o de forma aislada.
+stack:
+  - Angular
+  - Angular Material
+  - Jest
+repo: https://github.com/christiangh/ng-smart-input-fields-app
+order: 3

@@ -29,4 +29,7 @@ export const es = {
 
 	'experience.present': 'hoy',
 	'experience.stack': 'Tecnologías',
+
+	'projects.placeholder': 'captura del proyecto',
+	'projects.stack': 'Tecnologías',
 } as const;
