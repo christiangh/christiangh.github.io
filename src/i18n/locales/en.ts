@@ -33,4 +33,11 @@ export const en = {
 
 	'projects.placeholder': 'project screenshot',
 	'projects.stack': 'Technologies',
+
+	'contact.cta': "Let's talk!",
+
+	'footer.builtWith': 'Built with Astro and just enough JS',
+	'footer.backToTop': 'back to top',
+
+	'link.newTab': 'opens in a new tab',
 } satisfies Record<keyof typeof es, string>;

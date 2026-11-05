@@ -1,5 +1,13 @@
-export const contact = {
-	email: 'hola@tudominio.dev',
+interface Contact {
+	email: string;
+	github: string;
+	linkedin: string;
+	codepen: string;
+}
+
+export const contact: Contact = {
+	email: '',
 	github: 'https://github.com/christiangh',
 	linkedin: 'https://www.linkedin.com/in/christiangh/',
-} as const;
+	codepen: 'https://codepen.io/christiangh',
+};

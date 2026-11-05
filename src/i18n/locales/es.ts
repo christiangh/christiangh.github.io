@@ -32,4 +32,11 @@ export const es = {
 
 	'projects.placeholder': 'captura del proyecto',
 	'projects.stack': 'Tecnologías',
+
+	'contact.cta': '¡Hablemos!',
+
+	'footer.builtWith': 'Hecho con Astro y el JS justo y necesario',
+	'footer.backToTop': 'volver arriba',
+
+	'link.newTab': 'se abre en una pestaña nueva',
 } as const;

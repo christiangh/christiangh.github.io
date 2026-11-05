@@ -1,0 +1,49 @@
+---
+import { getLang, useTranslations } from '../i18n/utils';
+import { contact } from '../lib/contact';
+import SectionHeading from './SectionHeading.astro';
+
+const t = useTranslations(getLang(Astro.currentLocale));
+const profiles = [
+	{ name: 'GitHub', href: contact.github },
+	{ name: 'LinkedIn', href: contact.linkedin },
+	{ name: 'CodePen', href: contact.codepen },
+];
+---
+
+<section
+	id="contact"
+	aria-labelledby="contact-title"
+	class="border-t-2 border-ink bg-vanilla px-gutter pt-section pb-16 text-ink"
+>
+	<div class="mx-auto flex max-w-site flex-col gap-12">
+		<SectionHeading id="contact" detail="fetch('/contact', { method: 'POST' })" tone="light" />
+		{contact.email ? (
+			<a
+				href={`mailto:${contact.email}`}
+				class="self-start border-b-2 border-ink pb-1 font-display text-3xl italic wrap-anywhere"
+			>
+				{contact.email}
+			</a>
+		) : (
+			<p class="font-display text-3xl italic">{t('contact.cta')}</p>
+		)}
+		<ul class="flex flex-col gap-3 font-mono text-sm sm:flex-row">
+			{profiles.map(({ name, href }) => (
+				<li>
+					<a
+						href={href}
+						target="_blank"
+						class="flex items-center justify-between gap-4 rounded-full bg-ink px-6 py-4 text-cream hover:bg-bark motion-safe:transition-colors"
+					>
+						{name}
+						<span class="sr-only">({t('link.newTab')})</span>
+						<span aria-hidden="true" class="text-vanilla">
+							↗
+						</span>
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>

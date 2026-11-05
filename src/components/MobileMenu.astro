@@ -62,19 +62,35 @@ const home = getRelativeLocaleUrl(lang);
 	</nav>
 
 	<div class="mt-auto flex flex-col gap-1.5 px-gutter pt-6 pb-7 font-mono text-2xs text-caramel">
-		<a
-			href={`mailto:${contact.email}`}
-			class="font-display text-2xl text-vanilla italic wrap-anywhere"
-		>
-			{contact.email}
-		</a>
+		{contact.email ? (
+			<a
+				href={`mailto:${contact.email}`}
+				class="font-display text-2xl text-vanilla italic wrap-anywhere"
+			>
+				{contact.email}
+			</a>
+		) : (
+			<a href={`${home}#contact`} class="font-display text-2xl text-vanilla italic">
+				{t('contact.cta')}
+			</a>
+		)}
 		<p>
-			<a href={contact.github}>
-				GitHub <span aria-hidden="true">↗</span>
+			<a href={contact.github} target="_blank">
+				GitHub
+				<span class="sr-only">({t('link.newTab')})</span>
+				<span aria-hidden="true">↗</span>
 			</a>
 			<span aria-hidden="true">·</span>
-			<a href={contact.linkedin}>
-				LinkedIn <span aria-hidden="true">↗</span>
+			<a href={contact.linkedin} target="_blank">
+				LinkedIn
+				<span class="sr-only">({t('link.newTab')})</span>
+				<span aria-hidden="true">↗</span>
+			</a>
+			<span aria-hidden="true">·</span>
+			<a href={contact.codepen} target="_blank">
+				CodePen
+				<span class="sr-only">({t('link.newTab')})</span>
+				<span aria-hidden="true">↗</span>
 			</a>
 		</p>
 	</div>

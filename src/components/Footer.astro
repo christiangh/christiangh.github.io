@@ -1,0 +1,15 @@
+---
+import { getLang, useTranslations } from '../i18n/utils';
+
+const t = useTranslations(getLang(Astro.currentLocale));
+---
+
+<footer class="bg-vanilla px-gutter pb-8 font-mono text-2xs text-ink">
+	<div class="mx-auto flex max-w-site flex-col gap-2 border-t-2 border-ink pt-6 md:flex-row md:justify-between">
+		<p>© {new Date().getFullYear()} Christian García Herreras</p>
+		<p>{t('footer.builtWith')}</p>
+		<a href="#top" class="mt-4 self-start md:mt-0">
+			{t('footer.backToTop')} <span aria-hidden="true">↑</span>
+		</a>
+	</div>
+</footer>
