@@ -16,10 +16,7 @@ export const en = {
 	'section.contact.title': 'Con*tact*',
 
 	'hero.role': '*Frontend* developer',
-	'hero.tagline':
-		'Senior frontend developer. Scalable architectures, fast and accessible interfaces.',
 	'hero.location': 'Valencia, Spain',
-	'hero.cta': 'see projects',
 
 	'hero.accent.label': 'Accent color',
 	'hero.accent.cocoa': 'Cocoa',

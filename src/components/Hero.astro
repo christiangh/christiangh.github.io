@@ -8,7 +8,7 @@ const t = useTranslations(getLang(Astro.currentLocale));
 
 <section
 	id="top"
-	class="relative flex min-h-dvh flex-col overflow-hidden bg-cream px-gutter pt-section pb-8 text-ink"
+	class="relative flex flex-1 flex-col overflow-hidden bg-cream px-gutter pt-section pb-8 text-ink"
 >
 	<div class="flex flex-1 flex-wrap items-center justify-between gap-8 lg:gap-16">
 		<div class="flex flex-auto items-center justify-center gap-2 md:gap-4 xl:gap-6">
@@ -31,16 +31,5 @@ const t = useTranslations(getLang(Astro.currentLocale));
 		</div>
 
 		<Terminal />
-	</div>
-
-	<div class="mt-10 flex flex-col items-start gap-6 border-t-2 border-ink pt-5 md:flex-row md:items-end md:justify-between">
-		<p class="text-xl leading-snug font-medium text-pretty">{t('hero.tagline')}</p>
-		<a
-			href="#projects"
-			class="flex flex-none items-center gap-3 rounded-full bg-ink px-6.5 py-4.5 font-mono text-sm text-cream transition-colors hover:bg-vanilla hover:text-ink"
-		>
-			{t('hero.cta')}
-			<span aria-hidden="true">↓</span>
-		</a>
 	</div>
 </section>

@@ -15,10 +15,7 @@ export const es = {
 	'section.contact.title': 'Contac*to*',
 
 	'hero.role': 'Desarrollador *frontend*',
-	'hero.tagline':
-		'Desarrollador frontend senior. Arquitecturas escalables, interfaces rápidas y accesibles.',
 	'hero.location': 'Valencia, España',
-	'hero.cta': 'ver proyectos',
 
 	'hero.accent.label': 'Color de acento',
 	'hero.accent.cocoa': 'Cacao',
