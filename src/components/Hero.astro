@@ -1,5 +1,6 @@
 ---
 import { getLang, useTranslations } from '../i18n/utils';
+import Brace from './Brace.astro';
 import Emphasis from './Emphasis.astro';
 import Terminal from './Terminal.astro';
 
@@ -11,10 +12,8 @@ const t = useTranslations(getLang(Astro.currentLocale));
 	class="relative flex flex-1 flex-col overflow-hidden bg-cream px-gutter pt-section pb-8 text-ink"
 >
 	<div class="flex flex-1 flex-wrap items-center justify-between gap-8 lg:gap-16">
-		<div class="flex flex-auto items-center justify-center gap-2 md:gap-4 xl:gap-6">
-			<span aria-hidden="true" class="flex-none font-display text-brace text-gold">
-				{'{'}
-			</span>
+		<div class="flex flex-auto justify-center gap-2 md:gap-4 xl:gap-6">
+			<Brace side="left" />
 			<div class="flex flex-col items-center gap-4 text-center md:gap-6 xl:gap-8">
 				<h1 class="font-display text-hero">
 					<span class="block">Christian</span>
@@ -25,9 +24,7 @@ const t = useTranslations(getLang(Astro.currentLocale));
 					<Emphasis text={t('hero.role')} class="text-accent" />
 				</p>
 			</div>
-			<span aria-hidden="true" class="flex-none font-display text-brace text-gold">
-				{'}'}
-			</span>
+			<Brace side="right" />
 		</div>
 
 		<Terminal />

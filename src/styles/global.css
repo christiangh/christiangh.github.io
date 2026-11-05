@@ -53,9 +53,6 @@
 	--text-headline: clamp(2.75rem, 6vw, 6rem); /* 44 → 96px */
 	--text-headline--line-height: 0.95;
 	--text-headline--letter-spacing: -0.02em;
-	/* Braces wrap the hero name and role */
-	--text-brace: calc(var(--text-hero) * 3.3);
-	--text-brace--line-height: 0.78;
 
 	--leading-relaxed: 1.6;
 	--tracking-snug: -0.02em;
@@ -65,6 +62,7 @@
 	--container-text: 52ch; /* ~52 characters per line, for readable text */
 	--spacing-gutter: clamp(1rem, 4vw, 3rem); /* 16 → 48px */
 	--spacing-section: clamp(5rem, 10vw, 8.75rem); /* 80 → 140px */
+	--spacing-brace: var(--text-hero); /* hero brace width, scales with the name */
 
 	/* Radii */
 	--radius-panel: 0.625rem; /* 10px */
