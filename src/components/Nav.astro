@@ -3,6 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { getLang, useTranslations } from '../i18n/utils';
 import { stripEmphasis } from '../lib/emphasis';
 import { sections } from '../lib/sections';
+import LangSwitcher from './LangSwitcher.astro';
 import Logo from './Logo.astro';
 import MobileMenu from './MobileMenu.astro';
 
@@ -11,31 +12,33 @@ const t = useTranslations(lang);
 const home = getRelativeLocaleUrl(lang);
 ---
 
-<header class="fixed inset-x-0 top-0 z-50 bg-ink/92 font-mono text-xs text-cream backdrop-blur-md md:bg-ink/86">
+<header class="fixed inset-x-0 top-0 z-50 bg-ink/92 font-mono text-xs text-cream backdrop-blur-md lg:bg-ink/86">
 	<nav
 		aria-label={t('nav.label')}
-		class="flex h-14 items-center justify-between gap-4 px-gutter md:h-auto md:py-3.5"
+		class="flex h-14 items-center justify-between gap-4 px-gutter lg:h-auto lg:py-3.5"
 	>
 		<a href={`${home}#top`} class="font-bold tracking-wide">
 			<Logo />
 		</a>
 
-		<ol class="hidden gap-6 md:flex lg:gap-8">
-			{sections.map((id, index) => (
-				<li>
-					<a
-						href={`${home}#${id}`}
-						data-section={id}
-						class="lowercase transition-colors hover:text-gold current:text-vanilla"
-					>
-						<span aria-hidden="true">{String(index + 1).padStart(2, '0')} </span>
-						{stripEmphasis(t(`section.${id}.title`))}
-					</a>
-				</li>
-			))}
-		</ol>
-
-		<MobileMenu />
+		<div class="flex items-center gap-4 lg:gap-6">
+			<ol class="hidden gap-6 lg:flex xl:gap-8">
+				{sections.map((id, index) => (
+					<li>
+						<a
+							href={`${home}#${id}`}
+							data-section={id}
+							class="lowercase whitespace-nowrap transition-colors hover:text-gold current:text-vanilla"
+						>
+							<span aria-hidden="true">{String(index + 1).padStart(2, '0')} </span>
+							{stripEmphasis(t(`section.${id}.title`))}
+						</a>
+					</li>
+				))}
+			</ol>
+			<LangSwitcher class="lg:border-s lg:border-bark lg:ps-6" />
+			<MobileMenu />
+		</div>
 	</nav>
 </header>
 

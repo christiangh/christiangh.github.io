@@ -15,7 +15,7 @@ const home = getRelativeLocaleUrl(lang);
 	type="button"
 	aria-haspopup="dialog"
 	data-menu-open
-	class="flex h-11 items-center gap-2.5 px-1 text-caramel md:hidden"
+	class="flex h-11 items-center gap-2.5 px-1 text-caramel lg:hidden"
 >
 	{t('nav.menu')}
 	<span aria-hidden="true" class="flex w-5.5 flex-col items-end gap-1.25">
@@ -114,8 +114,8 @@ const home = getRelativeLocaleUrl(lang);
 			}
 		});
 
-		// A modal hidden by `md:` would leave the page inert.
-		matchMedia('(min-width: 48rem)').addEventListener('change', (event) => {
+		// A modal hidden by `lg:` would leave the page inert.
+		matchMedia('(min-width: 64rem)').addEventListener('change', (event) => {
 			if (event.matches) menu.close();
 		});
 	}

@@ -8,6 +8,7 @@ export const en = {
 	'nav.label': 'Main',
 	'nav.menu': 'menu',
 	'nav.close': 'close',
+	'nav.language': 'Language',
 
 	'section.about.title': 'About *me*',
 	'section.education.title': 'Educa*tion*',
