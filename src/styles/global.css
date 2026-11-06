@@ -97,6 +97,9 @@
 	--font-mono: var(--font-jetbrains-mono);
 }
 
+/* Links marked as current: the section in view, and later the active language */
+@custom-variant current (&[aria-current]);
+
 @layer base {
 	@media (prefers-reduced-motion: no-preference) {
 		html {

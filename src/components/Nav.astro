@@ -23,7 +23,11 @@ const home = getRelativeLocaleUrl(lang);
 		<ol class="hidden gap-6 md:flex lg:gap-8">
 			{sections.map((id, index) => (
 				<li>
-					<a href={`${home}#${id}`} class="lowercase transition-colors hover:text-gold">
+					<a
+						href={`${home}#${id}`}
+						data-section={id}
+						class="lowercase transition-colors hover:text-gold current:text-vanilla"
+					>
 						<span aria-hidden="true">{String(index + 1).padStart(2, '0')} </span>
 						{stripEmphasis(t(`section.${id}.title`))}
 					</a>
@@ -34,3 +38,28 @@ const home = getRelativeLocaleUrl(lang);
 		<MobileMenu />
 	</nav>
 </header>
+
+<script>
+	const links = document.querySelectorAll<HTMLAnchorElement>('[data-section]');
+	const sections = document.querySelectorAll<HTMLElement>('main section[id]');
+
+	// The section crossing the middle of the viewport is the current one.
+	const observer = new IntersectionObserver(
+		(entries) => {
+			for (const entry of entries) {
+				if (!entry.isIntersecting) continue;
+
+				for (const link of links) {
+					if (link.dataset.section === entry.target.id) {
+						link.setAttribute('aria-current', 'location');
+					} else {
+						link.removeAttribute('aria-current');
+					}
+				}
+			}
+		},
+		{ rootMargin: '-50% 0px -50% 0px' },
+	);
+
+	for (const section of sections) observer.observe(section);
+</script>

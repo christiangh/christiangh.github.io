@@ -47,9 +47,13 @@ const home = getRelativeLocaleUrl(lang);
 				<li>
 					<a
 						href={`${home}#${id}`}
-						class="flex items-baseline gap-4 border-b border-bark py-3.5"
+						data-section={id}
+						class="group flex items-baseline gap-4 border-b border-bark py-3.5"
 					>
-						<span aria-hidden="true" class="w-5 font-mono text-2xs text-caramel">
+						<span
+							aria-hidden="true"
+							class="w-5 font-mono text-2xs text-caramel group-current:text-vanilla"
+						>
 							{String(index + 1).padStart(2, '0')}
 						</span>
 						<span class="font-display text-menu">
@@ -74,20 +78,20 @@ const home = getRelativeLocaleUrl(lang);
 				{t('contact.cta')}
 			</a>
 		)}
-		<p>
-			<a href={contact.github} target="_blank">
+		<p class="flex flex-wrap gap-x-3">
+			<a href={contact.github} target="_blank" class="flex gap-1">
 				GitHub
 				<span class="sr-only">({t('link.newTab')})</span>
 				<span aria-hidden="true">↗</span>
 			</a>
 			<span aria-hidden="true">·</span>
-			<a href={contact.linkedin} target="_blank">
+			<a href={contact.linkedin} target="_blank" class="flex gap-1">
 				LinkedIn
 				<span class="sr-only">({t('link.newTab')})</span>
 				<span aria-hidden="true">↗</span>
 			</a>
 			<span aria-hidden="true">·</span>
-			<a href={contact.codepen} target="_blank">
+			<a href={contact.codepen} target="_blank" class="flex gap-1">
 				CodePen
 				<span class="sr-only">({t('link.newTab')})</span>
 				<span aria-hidden="true">↗</span>
