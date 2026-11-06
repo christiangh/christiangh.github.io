@@ -1,0 +1,24 @@
+---
+import About from './About.astro';
+import Contact from './Contact.astro';
+import Education from './Education.astro';
+import Experience from './Experience.astro';
+import Hero from './Hero.astro';
+import Marquee from './Marquee.astro';
+import Projects from './Projects.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+	<main>
+		<div class="flex min-h-dvh flex-col">
+			<Hero />
+			<Marquee />
+		</div>
+		<About />
+		<Education />
+		<Experience />
+		<Projects />
+		<Contact />
+	</main>
+</BaseLayout>
