@@ -12,4 +12,5 @@ stack:
   - IA
 repo: https://github.com/christiangh/jungle-parchis-sdd
 demo: https://christiangh.github.io/jungle-parchis-sdd/
-order: 1
+image: ../../../assets/projects/jungle-parchis.png
+order: 3

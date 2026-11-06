@@ -8,4 +8,5 @@ stack:
   - Angular Material
   - Jest
 repo: https://github.com/christiangh/ng-smart-input-fields-app
-order: 3
+image: ../../../assets/projects/portfolio.png
+order: 2

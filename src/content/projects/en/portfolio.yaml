@@ -6,4 +6,5 @@ stack:
   - TypeScript
   - Tailwind CSS
 repo: https://github.com/christiangh/christiangh.github.io
-order: 2
+image: ../../../assets/projects/portfolio.png
+order: 1
