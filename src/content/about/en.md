@@ -1,5 +1,5 @@
 ---
-headline: 'The right *solution* for each specific *case*.'
+headline: 'The right *solution* for the *case* at hand.'
 ---
 
 Not every problem is solved in the same way. Over my years building software, I have learned that keeping up with technology is essential, but knowing how to choose the right solution for each case, environment and team matters just as much.

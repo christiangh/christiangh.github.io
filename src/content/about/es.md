@@ -1,5 +1,5 @@
 ---
-headline: 'La *solución* correcta para cada *caso* concreto.'
+headline: 'La *solución* correcta para el *caso* concreto.'
 ---
 
 No todos los problemas se resuelven igual. En estos años desarrollando software he aprendido que estar al día en tecnología es imprescindible, pero que es igual de importante saber elegir la solución adecuada para cada caso, entorno y equipo.
