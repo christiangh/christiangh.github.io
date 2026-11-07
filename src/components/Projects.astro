@@ -20,7 +20,7 @@ const entries = (await getCollection('projects', ({ id }) => id.startsWith(`${la
 		<SectionHeading id="projects" detail="npm run showcase" tone="light" />
 		<ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{entries.map(({ data }, index) => (
-				<li class="relative flex flex-col border-2 border-ink bg-paper hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard has-focus-visible:shadow-hard motion-safe:transition">
+				<li class="flex flex-col border-2 border-ink bg-paper">
 					<div class="relative aspect-16/10 border-b-2 border-ink bg-stripes-light">
 						{data.image ? (
 							<Picture
@@ -44,14 +44,7 @@ const entries = (await getCollection('projects', ({ id }) => id.startsWith(`${la
 						</span>
 					</div>
 					<div class="flex flex-1 flex-col gap-3 p-6">
-						<h3 class="flex items-start justify-between gap-4 font-display text-2xl">
-							<a href={data.demo ?? data.repo} class="after:absolute after:inset-0">
-								{data.title}
-							</a>
-							<span aria-hidden="true" class="font-sans text-base">
-								→
-							</span>
-						</h3>
+						<h3 class="font-display text-2xl">{data.title}</h3>
 						<p class="text-base leading-relaxed text-pretty text-bark">
 							{data.summary}
 						</p>
