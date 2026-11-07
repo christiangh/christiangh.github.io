@@ -12,21 +12,46 @@ const t = useTranslations(getLang(Astro.currentLocale));
 	class="relative flex flex-1 flex-col overflow-hidden bg-cream px-gutter pt-section pb-8 text-ink"
 >
 	<div class="flex flex-1 flex-wrap items-center justify-between gap-8 lg:gap-16">
-		<div class="flex flex-auto justify-center gap-2 md:gap-4 xl:gap-6">
-			<Brace side="left" />
-			<div class="flex flex-col items-center gap-4 text-center md:gap-6 xl:gap-8">
-				<h1 class="font-display text-hero">
-					<span class="block">Christian</span>
-					<em class="block text-accent">García</em>
-					<span class="block">Herreras</span>
-				</h1>
-				<p class="font-display text-2xl tracking-snug">
-					<Emphasis text={t('hero.role')} class="text-accent" />
-				</p>
+		<div class="flex flex-auto justify-center">
+			<div class="flex flex-col gap-4 md:gap-6 xl:gap-8">
+				<div class="flex gap-2 md:gap-4 xl:gap-6">
+					<Brace side="left" />
+					<h1 class="text-center font-display text-hero text-trim">
+						<span class="block">Christian</span>
+						<em class="block text-accent">García</em>
+						<span class="block">Herreras</span>
+					</h1>
+					<Brace side="right" />
+				</div>
+				<div class="@container w-0 min-w-full px-brace-tip">
+					<p
+						data-fit
+						class="text-center font-display tracking-snug whitespace-nowrap text-fit"
+					>
+						<span data-fit-text>
+							<Emphasis text={t('hero.role')} class="text-accent" />
+						</span>
+					</p>
+				</div>
 			</div>
-			<Brace side="right" />
 		</div>
 
 		<Terminal />
 	</div>
 </section>
+
+<script>
+	// Scales the role to the width between the brace stems, whatever its length in each language.
+	const role = document.querySelector<HTMLElement>('[data-fit]');
+	const text = role?.querySelector('[data-fit-text]');
+
+	document.fonts.ready.then(() => {
+		if (!role || !text) return;
+
+		const fontSize = parseFloat(getComputedStyle(role).fontSize);
+		role.style.setProperty(
+			'--fit-ratio',
+			String(text.getBoundingClientRect().width / fontSize),
+		);
+	});
+</script>

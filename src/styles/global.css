@@ -63,6 +63,7 @@
 	--spacing-gutter: clamp(1rem, 4vw, 3rem); /* 16 → 48px */
 	--spacing-section: clamp(5rem, 10vw, 8.75rem); /* 80 → 140px */
 	--spacing-brace: var(--text-hero); /* hero brace width, scales with the name */
+	--spacing-brace-tip: calc(var(--spacing-brace) / 4); /* brace tip, up to its straight stroke */
 
 	/* Radii */
 	--radius-panel: 0.625rem; /* 10px */
@@ -134,4 +135,15 @@
 		var(--color-stripe-light-1) 0 0.875rem,
 		var(--color-stripe-light-2) 0.875rem 1.75rem
 	);
+}
+
+/* Trims the line box to the cap height and the baseline, so the box hugs the letters */
+@utility text-trim {
+	text-box: trim-both cap alphabetic;
+}
+
+/* Fills the container width with a single line; --fit-ratio is the line width in em, set by script */
+@utility text-fit {
+	font-size: calc(100cqi / var(--fit-ratio, 10));
+	line-height: 1;
 }
