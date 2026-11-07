@@ -9,6 +9,7 @@ export const en = {
 	'nav.menu': 'menu',
 	'nav.close': 'close',
 	'nav.language': 'Language',
+	'nav.skip': 'Skip to content',
 
 	'section.about.title': 'About *me*',
 	'section.education.title': 'Educa*tion*',

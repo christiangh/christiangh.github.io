@@ -7,6 +7,7 @@ export const es = {
 	'nav.menu': 'menú',
 	'nav.close': 'cerrar',
 	'nav.language': 'Idioma',
+	'nav.skip': 'Saltar al contenido',
 
 	// `*text*` marks the emphasized part, rendered in italics.
 	'section.about.title': 'Sobre *mí*',

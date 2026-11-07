@@ -48,6 +48,12 @@ const path = stripLocale(Astro.url.pathname);
 		<Font cssVariable="--font-jetbrains-mono" preload />
 	</head>
 	<body class="antialiased">
+		<a
+			href="#main"
+			class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-gutter focus:z-50 focus:bg-vanilla focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:text-ink"
+		>
+			{t('nav.skip')}
+		</a>
 		<Nav />
 		<slot />
 		<Footer />
