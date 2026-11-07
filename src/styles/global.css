@@ -147,3 +147,8 @@
 	font-size: calc(100cqi / var(--fit-ratio, 10));
 	line-height: 1;
 }
+
+/* Stops an animation where it is, to resume it from the same point */
+@utility animation-paused {
+	animation-play-state: paused;
+}

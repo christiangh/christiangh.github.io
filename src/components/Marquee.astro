@@ -2,8 +2,8 @@
 import { technologies } from '../lib/technologies';
 ---
 
-<div class="overflow-hidden border-y-2 border-ink bg-vanilla py-4.5 text-ink">
-	<div class="flex w-max motion-safe:animate-marquee">
+<div class="group overflow-hidden border-y-2 border-ink bg-vanilla py-4.5 text-ink">
+	<div class="flex w-max motion-safe:animate-marquee group-hover:animation-paused">
 		{[false, true].map((duplicate) => (
 			<ul
 				aria-hidden={duplicate ? 'true' : undefined}
