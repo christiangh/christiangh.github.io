@@ -18,7 +18,7 @@ const t = useTranslations(getLang(Astro.currentLocale));
 					<Brace side="left" />
 					<h1 class="text-center font-display text-hero text-trim">
 						<span class="block">Christian</span>
-						<em class="block text-accent">García</em>
+						<span class="block text-accent italic">García</span>
 						<span class="block">Herreras</span>
 					</h1>
 					<Brace side="right" />
@@ -29,7 +29,7 @@ const t = useTranslations(getLang(Astro.currentLocale));
 						class="text-center font-display tracking-snug whitespace-nowrap text-fit"
 					>
 						<span data-fit-text>
-							<Emphasis text={t('hero.role')} class="text-accent" />
+							<Emphasis text={t('hero.role')} class="text-accent italic" />
 						</span>
 					</p>
 				</div>

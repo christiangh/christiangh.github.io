@@ -18,7 +18,7 @@ const number = String(sections.indexOf(id) + 1).padStart(2, '0');
 	<h2 id={`${id}-title`} class="font-display text-display">
 		<Emphasis
 			text={t(`section.${id}.title`)}
-			class={tone === 'dark' ? 'text-vanilla' : 'text-cocoa'}
+			class={tone === 'dark' ? 'text-vanilla italic' : 'text-cocoa italic'}
 		/>
 	</h2>
 	<p class:list={['font-mono text-xs', tone === 'dark' ? 'text-caramel' : 'text-bark']}>

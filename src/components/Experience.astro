@@ -41,7 +41,7 @@ const entries = (await getCollection('experience', ({ id }) => id.startsWith(`${
 					</summary>
 					<div class="flex flex-col gap-6 pb-10 md:flex-row md:gap-10">
 						<p class="max-w-text text-base leading-relaxed text-pretty text-latte">
-							<Emphasis text={data.summary} class="text-vanilla not-italic" />
+							<Emphasis text={data.summary} class="text-vanilla" />
 						</p>
 						<ul
 							aria-label={t('experience.stack')}
