@@ -54,8 +54,8 @@ const entries = (await getCollection('projects', ({ id }) => id.startsWith(`${la
 						>
 							{data.stack.map((tech, i) => (
 								<li class="flex gap-2">
-									{i > 0 && <span aria-hidden="true">·</span>}
 									{tech}
+									{i < data.stack.length - 1 && <span aria-hidden="true">·</span>}
 								</li>
 							))}
 						</ul>
