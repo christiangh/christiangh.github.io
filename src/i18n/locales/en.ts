@@ -34,6 +34,8 @@ export const en = {
 	'experience.stack': 'Technologies',
 
 	'projects.placeholder': 'project screenshot',
+	'projects.code': 'code',
+	'projects.demo': 'demo',
 	'projects.stack': 'Technologies',
 
 	'contact.cta': "Let's talk!",

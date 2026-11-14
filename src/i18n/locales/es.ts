@@ -33,6 +33,8 @@ export const es = {
 	'experience.stack': 'Tecnologías',
 
 	'projects.placeholder': 'captura del proyecto',
+	'projects.code': 'código',
+	'projects.demo': 'demo',
 	'projects.stack': 'Tecnologías',
 
 	'contact.cta': '¡Hablemos!',
