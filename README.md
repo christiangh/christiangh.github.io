@@ -4,12 +4,18 @@ Personal portfolio of Christian García Herreras, senior frontend developer.
 
 **Live:** https://christiangh.github.io
 
+## Features
+
+- Bilingual: Spanish at `/`, English at `/en/`
+- Accessible: semantic HTML, keyboard navigation and reduced motion support
+- Static and fast, with just enough JavaScript
+- Open Graph images for link previews
+
 ## Stack
 
 - [Astro](https://astro.build) (static output)
-- TypeScript (strict)
-- Deployed to GitHub Pages via GitHub Actions
 - [Tailwind CSS v4](https://tailwindcss.com)
+- TypeScript (strict)
 
 ## Requirements
 
@@ -24,6 +30,11 @@ pnpm dev
 ```
 
 The dev server runs at http://localhost:4321.
+
+## Content
+
+About, education, experience and projects live in `src/content/` as Markdown and YAML, in
+Spanish and English. UI texts live in `src/i18n/locales/`.
 
 ## Scripts
 
