@@ -1,0 +1,12 @@
+title: NG Smart
+summary: >-
+  Components, services and interceptors on top of Angular Material that unify
+  form fields. They validate and show errors automatically, custom validators
+  included, so that logic lives in the library and not in every form.
+stack:
+  - Angular
+  - Angular Material
+  - Jest
+repo: https://github.com/christiangh/ng-smart-input-fields-app
+image: ../../../assets/projects/ng-smart.png
+order: 2
