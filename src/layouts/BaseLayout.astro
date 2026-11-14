@@ -28,8 +28,6 @@ const path = stripLocale(Astro.url.pathname);
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<!-- Keeps the unfinished site out of search results. Remove before launch. -->
-		<meta name="robots" content="noindex" />
 		<link rel="canonical" href={canonicalUrl} />
 		{Object.keys(languages).map((code) => (
 			<link rel="alternate" hreflang={code} href={getAbsoluteLocaleUrl(code, path)} />
