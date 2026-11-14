@@ -2,6 +2,7 @@ export const es = {
 	'meta.title': 'Christian García Herreras · Desarrollador frontend senior',
 	'meta.description':
 		'Desarrollador frontend senior especializado en Angular. Diseño arquitecturas frontend escalables y trabajo con Astro e IA aplicada al desarrollo.',
+	'meta.ogImageAlt': 'Christian García Herreras, desarrollador frontend',
 
 	'nav.label': 'Principal',
 	'nav.menu': 'menú',

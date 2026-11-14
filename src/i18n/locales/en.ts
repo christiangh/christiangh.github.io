@@ -4,6 +4,7 @@ export const en = {
 	'meta.title': 'Christian García Herreras · Senior Frontend Developer',
 	'meta.description':
 		'Senior frontend developer specialized in Angular. I design scalable frontend architectures and work with Astro and AI applied to development.',
+	'meta.ogImageAlt': 'Christian García Herreras, frontend developer',
 
 	'nav.label': 'Main',
 	'nav.menu': 'menu',
