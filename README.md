@@ -19,7 +19,7 @@ Personal portfolio of Christian García Herreras, senior frontend developer.
 
 ## Requirements
 
-- Node.js 26 (see [`.nvmrc`](./.nvmrc))
+- Node.js 22.23.4 or later (CI and [`.nvmrc`](./.nvmrc) use 26)
 - pnpm 12 (pinned in `package.json` → `packageManager`)
 
 ## Getting started
