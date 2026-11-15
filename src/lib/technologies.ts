@@ -1,9 +1,11 @@
 export const technologies = [
 	'Angular',
 	'TypeScript',
+	'Native Federation',
 	'RxJS',
 	'Signals',
 	'CSS',
+	'Nx',
 	'Astro',
 	'JavaScript',
 	'HTML',
