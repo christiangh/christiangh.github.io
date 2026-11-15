@@ -39,6 +39,7 @@ export const es = {
 	'projects.stack': 'Tecnologías',
 
 	'contact.cta': '¡Hablemos!',
+	'contact.cv': 'Descargar CV',
 
 	'footer.builtWith': 'Hecho con Astro y el JS justo y necesario',
 	'footer.backToTop': 'volver arriba',

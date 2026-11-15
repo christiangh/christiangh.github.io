@@ -3,7 +3,8 @@ import { getLang, useTranslations } from '../i18n/utils';
 import { contact } from '../lib/contact';
 import SectionHeading from './SectionHeading.astro';
 
-const t = useTranslations(getLang(Astro.currentLocale));
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
 const profiles = [
 	{ name: 'GitHub', href: contact.github },
 	{ name: 'LinkedIn', href: contact.linkedin },
@@ -44,6 +45,17 @@ const profiles = [
 					</a>
 				</li>
 			))}
+			<li>
+				<a
+					href={`/cv/christian-garcia-herreras-cv-${lang}.pdf`}
+					download
+					class="flex items-center justify-between gap-4 rounded-full border-2 border-ink px-6 py-3.5 hover:bg-ink hover:text-cream motion-safe:transition-colors"
+				>
+					{t('contact.cv')}
+					<span class="sr-only">(PDF)</span>
+					<span aria-hidden="true">↓</span>
+				</a>
+			</li>
 		</ul>
 	</div>
 </section>

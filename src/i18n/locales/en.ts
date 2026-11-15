@@ -40,6 +40,7 @@ export const en = {
 	'projects.stack': 'Technologies',
 
 	'contact.cta': "Let's talk!",
+	'contact.cv': 'Download CV',
 
 	'footer.builtWith': 'Built with Astro and just enough JS',
 	'footer.backToTop': 'back to top',
